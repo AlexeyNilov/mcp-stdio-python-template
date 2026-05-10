@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-stdio-python-template"
-version = "0.1.0"
+version = "0.1.1"
 description = "Minimal Python stdio MCP server template."
 readme = "README.md"
 requires-python = ">=3.10"

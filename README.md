@@ -15,9 +15,9 @@ Minimal Python template for stdio-based MCP servers.
 * Create new Git repo
 * Copy content of https://github.com/AlexeyNilov/mcp-stdio-python-template to the new repo
 * Commit
-* Rename from mcp-stdio-python-template to new repo name
+* Rename from mcp-stdio-python-template to new repo name `bash scripts/rename-template.sh your-new-repo-name`
 * Create venv
-* Install python -m pip install -e ".[dev]"
+* Install package `python -m pip install -e ".[dev]"`
 
 ## Add to Codex
 
