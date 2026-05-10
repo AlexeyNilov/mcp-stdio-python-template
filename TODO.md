@@ -8,4 +8,4 @@
 
 ## Actual tasks
 
-* Use C:\an\git\ask-notebooklm for reference
+* [x] Use C:\an\git\ask-notebooklm for reference

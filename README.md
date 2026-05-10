@@ -1,2 +1,57 @@
 # mcp-stdio-python-template
-Minimalistic Python MCP STDIO template
+
+Minimal Python template for stdio-based MCP servers.
+
+## What it includes
+
+- A `src/` package layout.
+- A console script entry point: `mcp-stdio-python-template`.
+- A FastMCP server factory in `mcp_stdio_python_template.server`.
+- One demo MCP tool named `status` that returns `ok`.
+- Pytest, Ruff, and mypy configuration.
+
+## Setup
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+```
+
+## Run
+
+Start the MCP server over stdio:
+
+```powershell
+.\.venv\Scripts\mcp-stdio-python-template.exe
+```
+
+You can also run the package module directly:
+
+```powershell
+.\.venv\Scripts\python.exe -m mcp_stdio_python_template
+```
+
+## Add to Codex
+
+Add a stdio MCP server entry to your Codex config file:
+
+```toml
+[mcp_servers.mcp_stdio_python_template]
+command = "C:\\an\\git\\mcp-stdio-python-template\\.venv\\Scripts\\python.exe"
+args = ["-m", "mcp_stdio_python_template"]
+cwd = "C:\\an\\git\\mcp-stdio-python-template"
+```
+
+Restart Codex after changing the config. The server exposes one tool:
+
+```text
+status -> ok
+```
+
+## Development checks
+
+```powershell
+.\.venv\Scripts\pytest.exe
+.\.venv\Scripts\ruff.exe format --check .
+.\.venv\Scripts\ruff.exe check .
+.\.venv\Scripts\mypy.exe
+```
