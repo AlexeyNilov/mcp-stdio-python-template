@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import logging
 import sys
 from collections.abc import Callable, Sequence
 from importlib.metadata import PackageNotFoundError, version
 from typing import Literal, Protocol
 
+from mcp_stdio_python_template.config import load_config
 from mcp_stdio_python_template.server import build_server
 
 PACKAGE_NAME = "mcp-stdio-python-template"
@@ -42,6 +44,8 @@ def main(
         return 2
 
     try:
+        config = load_config()
+        logging.basicConfig(level=config.log_level)
         server_factory().run("stdio")
     except Exception as error:
         sys.stderr.write(f"mcp-stdio-python-template failed to start: {error}\n")

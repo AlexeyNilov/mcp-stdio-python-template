@@ -18,6 +18,12 @@ Minimal Python template for stdio-based MCP servers.
 * Rename from mcp-stdio-python-template to new repo name `bash scripts/rename-template.sh your-new-repo-name`
 * Create venv
 * Install package `python -m pip install -e ".[dev]"`
+* Copy `.env.example` to `.env` and adjust local settings if needed
+
+## Configuration
+
+The server reads local configuration from `.env`. Values already set in the process
+environment take precedence over `.env` values.
 
 ## Add to Codex
 
