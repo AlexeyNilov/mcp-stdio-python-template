@@ -2,9 +2,12 @@ from __future__ import annotations
 
 import sys
 from collections.abc import Callable, Sequence
+from importlib.metadata import PackageNotFoundError, version
 from typing import Literal, Protocol
 
 from mcp_stdio_python_template.server import build_server
+
+PACKAGE_NAME = "mcp-stdio-python-template"
 
 
 class RunnableServer(Protocol):
@@ -31,6 +34,9 @@ def main(
     if wants_help(args):
         sys.stdout.write(help_text())
         return 0
+    if args == ["--version"]:
+        sys.stdout.write(f"{PACKAGE_NAME} {package_version()}\n")
+        return 0
     if args:
         sys.stderr.write(f"Unknown command: {args[0]}\n\n{help_text()}")
         return 2
@@ -47,12 +53,20 @@ def wants_help(args: Sequence[str]) -> bool:
     return any(arg in {"-h", "--help"} for arg in args)
 
 
+def package_version() -> str:
+    try:
+        return version(PACKAGE_NAME)
+    except PackageNotFoundError:
+        return "0.0.0"
+
+
 def help_text() -> str:
     return (
-        "mcp-stdio-python-template\n\n"
+        f"{PACKAGE_NAME}\n\n"
         "Runs a minimal stdio MCP server.\n\n"
         "Usage:\n"
         "  mcp-stdio-python-template\n"
+        "  mcp-stdio-python-template --version\n"
     )
 
 

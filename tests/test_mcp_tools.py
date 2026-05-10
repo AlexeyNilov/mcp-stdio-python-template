@@ -10,6 +10,7 @@ async def test_server_exposes_only_status_tool():
     tools = await server.list_tools()
 
     assert {tool.name for tool in tools} == {"status"}
+    assert "version" not in {tool.name for tool in tools}
 
 
 @pytest.mark.anyio

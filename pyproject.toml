@@ -9,9 +9,6 @@ description = "Minimal Python stdio MCP server template."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "CC0-1.0" }
-authors = [
-    { name = "Alexey Nilov" },
-]
 keywords = ["mcp", "stdio", "template"]
 classifiers = [
     "Development Status :: 3 - Alpha",

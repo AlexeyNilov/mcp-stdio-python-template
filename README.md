@@ -30,6 +30,12 @@ You can also run the package module directly:
 .\.venv\Scripts\python.exe -m mcp_stdio_python_template
 ```
 
+Show the installed package version:
+
+```powershell
+.\.venv\Scripts\mcp-stdio-python-template.exe --version
+```
+
 ## Add to Codex
 
 Add a stdio MCP server entry to your Codex config file:

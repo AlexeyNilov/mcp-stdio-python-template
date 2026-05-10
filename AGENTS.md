@@ -30,6 +30,7 @@ Your job is to help the user think better, and to write production ready code. O
 ## Rules
 - Use existing project patterns.
 - `.env` is local-only and may contain user-specific credentials; never commit it.
+- After significant changes, bump the project version in `pyproject.toml` using semantic versioning.
 
 ## Before coding
 - List assumptions.
