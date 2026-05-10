@@ -12,29 +12,12 @@ Minimal Python template for stdio-based MCP servers.
 
 ## Setup
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
-```
-
-## Run
-
-Start the MCP server over stdio:
-
-```powershell
-.\.venv\Scripts\mcp-stdio-python-template.exe
-```
-
-You can also run the package module directly:
-
-```powershell
-.\.venv\Scripts\python.exe -m mcp_stdio_python_template
-```
-
-Show the installed package version:
-
-```powershell
-.\.venv\Scripts\mcp-stdio-python-template.exe --version
-```
+* Create new Git repo
+* Copy content of https://github.com/AlexeyNilov/mcp-stdio-python-template to the new repo
+* Commit
+* Rename from mcp-stdio-python-template to new repo name
+* Create venv
+* Install python -m pip install -e ".[dev]"
 
 ## Add to Codex
 
