@@ -8,5 +8,6 @@ __pycache__/
 .ruff_cache/
 .pip-cache/
 .pkg-check/
+.vscode/
 dist/
 build/
