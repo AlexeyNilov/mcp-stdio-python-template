@@ -32,9 +32,12 @@ Your job is to help the user think better, and to write production ready code. O
 - `.env` is local-only and may contain user-specific credentials; never commit it.
 - After significant changes, bump the project version in `pyproject.toml` using semantic versioning.
 
-## Before coding
-- List assumptions.
-- Propose a short implementation plan.
+## Think before coding/implementing
+- List assumptions that affect behavior, public API, data, security, or verification.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+- Propose a short implementation plan for non-trivial changes.
 
 ## Code Quality
 - Write code as if it will be production-reviewed by a senior Go developer.
@@ -47,12 +50,25 @@ Your job is to help the user think better, and to write production ready code. O
 - Avoid new dependencies unless justified.
 
 ## Tooling
+
+### On Windows, PowerShell
 - Use Ruff for formatting and linting:
   - `.\.venv\Scripts\ruff.exe format --check .`
   - `.\.venv\Scripts\ruff.exe check .`
 - Use mypy for type checking:
   - `.\.venv\Scripts\mypy.exe`
+
+### On Linux
+- Use Ruff for formatting and linting:
+  - `make format`
+  - `make lint`
+- Use mypy for type checking:
+  - `make mypy`
+
 - Run these checks before considering implementation work complete.
 
 ## Documentation
+- Type Hints First: Use explicit and precise type hints for all arguments and return values.
+- Minimalist Docstrings: Omit docstrings for "obvious" functions (getters, setters, simple wrappers, or self-documenting signatures).
+- Mandatory Docstrings: Provide Google-style docstrings (Purpose, Args, Returns, Raises) only if the function contains complex "Why" logic or non-obvious business rules.
 - Any significant change affecting architecture, data flow, or public interfaces must be reflected in `README.md`.
