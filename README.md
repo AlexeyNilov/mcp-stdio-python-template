@@ -31,9 +31,9 @@ Add a stdio MCP server entry to your Codex config file:
 
 ```toml
 [mcp_servers.mcp_stdio_python_template]
-command = "C:\\an\\git\\mcp-stdio-python-template\\.venv\\Scripts\\python.exe"
+command = "path_to_project\\.venv\\Scripts\\python.exe"
 args = ["-m", "mcp_stdio_python_template"]
-cwd = "C:\\an\\git\\mcp-stdio-python-template"
+cwd = "path_to_project"
 ```
 
 Restart Codex after changing the config. The server exposes one tool:
